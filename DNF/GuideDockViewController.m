@@ -39,11 +39,15 @@
     [dock addItemWithTitle:@"技能" NormalImage:normal SelectedImage:selected];
     [dock addItemWithTitle:@"装备" NormalImage:normal SelectedImage:selected];
     [dock addItemWithTitle:@"介绍" NormalImage:normal SelectedImage:selected];
+    NSMutableArray *arrControllers = [NSMutableArray array];
 //    GuideViewController *guide =  [[GuideViewController alloc]init];
-    NewsViewController *new = [[NewsViewController alloc]init];
-//    NSArray *arrControllers = @[new,new,new,new];
-//    self.viewControllers  = arrControllers;
-    
+    for (NSInteger i = 0; i<4; i++) {
+         NewsViewController *new = [[NewsViewController alloc]initWithUrl:@"http://dnf.zhangyoubao.com/apis/rest/ItemsService/lists/?&cattype=guide&roleid=10057&page=1&i_=63f2ee4574296ff32b18ea05e80df97baf22771b&t_=1453006368&p_=21449&v_=3050205&d_=ios&dv_=9.2&version=0" Title:@"shouhuzhe"];
+        [arrControllers addObject:new];
+    }
+    self.viewControllers = arrControllers;
+    NSLog(@"----" );
+
 }
 /**
  *  生成纯色图片

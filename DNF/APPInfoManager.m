@@ -14,6 +14,7 @@ static APPInfoManager *_InfoManage;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _InfoManage = [[APPInfoManager alloc] init];
+        
     });
     return _InfoManage;
 }

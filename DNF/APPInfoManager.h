@@ -10,4 +10,9 @@
 
 @interface APPInfoManager : NSObject
 + (id)sharedManager;
+/**
+ *  职业攻略是否已经选择过职业，如果已经选择过，就直接跳转到该职业的页面
+ 如果没有选择过则跳转到职业选择页面
+ */
+@property (nonatomic,assign)BOOL isJobsChoosed;
 @end

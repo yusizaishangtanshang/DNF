@@ -14,6 +14,7 @@
 #import "REFrostedViewController.h"
 #import "NaviViewController.h"
 #import "GuideViewController.h"
+#import "APPInfoManager.h"
 @interface AppDelegate ()
 @end
 
@@ -22,7 +23,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     DockViewController *newDock = [[DockViewController alloc]init];
     GuideDockViewController *guideDock = [[GuideDockViewController alloc]init];
     NaviViewController *navGuide = [[NaviViewController alloc]initWithRootViewController:guideDock];

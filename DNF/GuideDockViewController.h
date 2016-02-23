@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Dock.h"
-#import "GuideDockViewController.h"
 @interface GuideDockViewController : UITabBarController<DockDelegate>
 
 @end

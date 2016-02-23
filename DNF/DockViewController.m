@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 贺东方. All rights reserved.
 //
 
-#define __kScreenHeight [UIScreen mainScreen].bounds.size.height
-#define __kScreenWidth [UIScreen mainScreen].bounds.size.width
 
 
 #import "DockViewController.h"
@@ -29,7 +27,7 @@
 #pragma mark 添加Dock
 - (void)addDock
 {
-    CGRect rect = CGRectMake(0, 64, __kScreenWidth, 49);
+    CGRect rect = CGRectMake(0, 64, kScreenWidth, 49);
     Dock *dock = [[Dock alloc]initWithFrame:rect];
     dock.backgroundColor = [UIColor grayColor];
     dock.delegate = self;
@@ -56,12 +54,12 @@
                         @"http://dnf.zhangyoubao.com/apis/rest/ItemsService/lists/?&cattype=news&catid=10181&page=%d&i_=63f2ee4574296ff32b18ea05e80df97baf22771b&t_=1453006141&p_=20768&v_=3050205&d_=ios&dv_=9.2&version=0"
                        ];
     NSArray *arrTitle = @[@"全部",@"资讯",@"活动",@"娱乐"];
-    NSMutableArray *arrVc = [NSMutableArray array];
+    NSMutableArray *arrControllers = [NSMutableArray array];
     for (NSInteger i = 0; i < 4; i++) {
          NewsViewController *news = [[NewsViewController alloc]initWithUrl:arrUrl[i] Title:arrTitle[i]];
-        [arrVc addObject:news];
+        [arrControllers addObject:news];
     }
-    self.viewControllers  = arrVc;
+    self.viewControllers  = arrControllers;
     
 }
 /**
